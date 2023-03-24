@@ -11,7 +11,8 @@ import { TiketService } from 'src/app/services/tiket.service';
 export class TiketsListComponent implements OnInit{
 
   tikets:ITiket[];
-  displayedColumns: string[] = ['customeWhatsappId','customeName','createdAt'];
+  displayedColumns: string[] = 
+  ['customeWhatsappId','customeName','createdAt','assistant', 'state'];
   routes:any;
   routesParam:any;
 
