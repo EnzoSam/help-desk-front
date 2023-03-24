@@ -12,12 +12,22 @@ import { AppService } from './services/app.service';
 import { InterceptorService } from './services/interceptor.service';
 import { TokenService } from './services/token.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AssistantsListComponent } from './components/assistants-list/assistants-list.component';
+import { AssistantsDetailComponent } from './components/assistants-detail/assistants-detail.component';
+import { TiketsListComponent } from './components/tikets-list/tikets-list.component';
+import { AssistantService } from './services/assitant.service';
+import { ErrorComponent } from './components/error/error.component';
+import { TiketService } from './services/tiket.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    AssistantsListComponent,
+    AssistantsDetailComponent,
+    TiketsListComponent,
+    ErrorComponent
   ],
   imports: [
     HttpClientModule,
@@ -31,6 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [
     TokenService,
     AppService,
+    AssistantService,
+    TiketService,
     {
       provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
     }

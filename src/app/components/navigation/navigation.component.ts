@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { site } from 'src/app/constants/app-routes.constants';
+import { routesPaths, site } from 'src/app/constants/app-routes.constants';
 
 @Component({
   selector: 'app-navigation',
@@ -9,9 +9,11 @@ import { site } from 'src/app/constants/app-routes.constants';
 export class NavigationComponent {
 
   siteName:string;
+  routes:any;
   constructor()
   {
     this.siteName = site.name;
+    this.routes = routesPaths;
   }
 
 }

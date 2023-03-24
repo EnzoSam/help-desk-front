@@ -4,7 +4,9 @@ export const site = {
 
 export const routesPaths = {    
     home: "home",
-    precios: "precios",
+    tikets: "tikets",
+    assistants:"assistants",
+    assistants_detail:"assistant-detail"
   };
 
   export const routesParams = {    
