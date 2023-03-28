@@ -18,6 +18,8 @@ import { TiketsListComponent } from './components/tikets-list/tikets-list.compon
 import { AssistantService } from './services/assitant.service';
 import { ErrorComponent } from './components/error/error.component';
 import { TiketService } from './services/tiket.service';
+import { TiketDetailComponent } from './components/tiket-detail/tiket-detail.component';
+import { AssignTiketAssistantComponent } from './components/assign-tiket-assistant/assign-tiket-assistant.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { TiketService } from './services/tiket.service';
     AssistantsListComponent,
     AssistantsDetailComponent,
     TiketsListComponent,
-    ErrorComponent
+    ErrorComponent,
+    TiketDetailComponent,
+    AssignTiketAssistantComponent
   ],
   imports: [
     HttpClientModule,

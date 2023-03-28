@@ -5,8 +5,11 @@ export const site = {
 export const routesPaths = {    
     home: "home",
     tikets: "tikets",
+    tiket_detail:"tikets-detail",
+    assign_tiket_assistant:'tiket-assistant',
     assistants:"assistants",
     assistants_detail:"assistant-detail"
+  
   };
 
   export const routesParams = {    

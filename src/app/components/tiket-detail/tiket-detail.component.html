@@ -1,0 +1,25 @@
+<form #form="ngForm"  (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label for="customeName">Cliente</mat-label>
+        <input matInput name="customeName" [(ngModel)]="tiket.customeName" >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for="assistant">Tecnico</mat-label>
+        <mat-select name="assistant"
+        [compareWith]="compareFn" [(ngModel)]="tiket.assistant">
+          <mat-option *ngFor="let a of assistants" [value]="a">{{a.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field >
+        <mat-label for="problemDescription">Incidencia</mat-label>
+        <textarea name="problemDescription"
+         matInput [(ngModel)]="tiket.problemDescription"></textarea>
+      </mat-form-field>   
+
+      <mat-form-field appearance="fill">
+        <mat-label for="state">Estado</mat-label>
+        <input matInput name="state" [(ngModel)]="tiket.state" >
+      </mat-form-field>      
+      
+      <button mat-raised-button color="primary">Guardar</button>
+</form>

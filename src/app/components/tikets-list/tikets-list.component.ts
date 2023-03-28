@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routesParams, routesPaths } from 'src/app/constants/app-routes.constants';
-import { ITiket } from 'src/app/models/itiket.model';
+import { Tiket } from 'src/app/models/tiket.model';
 import { TiketService } from 'src/app/services/tiket.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { TiketService } from 'src/app/services/tiket.service';
 })
 export class TiketsListComponent implements OnInit{
 
-  tikets:ITiket[];
+  tikets:Tiket[];
   displayedColumns: string[] = 
-  ['customeWhatsappId','customeName','createdAt','assistant', 'state'];
+  ['customeName','createdAt','assistant', 'state'];
   routes:any;
   routesParam:any;
 
@@ -23,7 +23,7 @@ export class TiketsListComponent implements OnInit{
     this.routesParam = routesParams;
   }
   ngOnInit(): void {
-    
+        
     this.loadTikets();
 
   }
