@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../envirorments/envirorments';
 import { IAssistant } from '../models/iassistant.model';
+import { ITiketAssignation } from '../models/itiketAssignation.model';
 import { Tiket } from '../models/tiket.model';
 import { BaseService } from './baseService.service';
 
@@ -36,6 +37,16 @@ export class TiketService extends BaseService{
       return tiket
   }
 
+  newTiketAssignation():ITiketAssignation  
+  {
+    return {
+      idTiket:undefined,
+      idAssistant:undefined,
+      sendGreeting:true,
+      greeting:''
+    }
+  }
+
   getTikets(state:number):Observable<Tiket[]>
   {
     return this._http.get<Tiket[]>(environment.baseApiUrl + 'tiket/' + state);
@@ -60,4 +71,9 @@ export class TiketService extends BaseService{
     return this._http.delete<Tiket>(environment.baseApiUrl + 'tiket/' + id);
   }  
 
+  assingAssistant(tiketAssignation:ITiketAssignation):Observable<any>
+  {
+      return this._http.post
+      (environment.baseApiUrl + 'tiket/assignation',tiketAssignation);
+  }  
 }

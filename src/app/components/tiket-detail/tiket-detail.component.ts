@@ -63,9 +63,7 @@ export class TiketDetailComponent implements OnInit{
   }
 
   onSubmit()
-  {
-    console.log('onsbumit');
-    
+  {   
     this._tiketService.save(this.tiket).subscribe
     (response=>
       {

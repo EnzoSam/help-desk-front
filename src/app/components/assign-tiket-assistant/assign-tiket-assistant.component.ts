@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { routesParams } from 'src/app/constants/app-routes.constants';
 import { IAssistant } from 'src/app/models/iassistant.model';
+import { ITiketAssignation } from 'src/app/models/itiketAssignation.model';
 import { Tiket } from 'src/app/models/tiket.model';
 import { AssistantService } from 'src/app/services/assitant.service';
 import { TiketService } from 'src/app/services/tiket.service';
@@ -15,6 +16,7 @@ export class AssignTiketAssistantComponent implements OnInit{
 
   tiket:Tiket;
   assistants:IAssistant[];
+  tiketAssignation:ITiketAssignation;
 
   constructor(private _tiketService:TiketService,
     private _assistantsService:AssistantService,
@@ -23,6 +25,7 @@ export class AssignTiketAssistantComponent implements OnInit{
   {
     this.assistants = [];
     this.tiket = this._tiketService.newTiket();
+    this.tiketAssignation = this._tiketService.newTiketAssignation();
   }
   ngOnInit(): void {
     
@@ -63,13 +66,15 @@ export class AssignTiketAssistantComponent implements OnInit{
   }
 
   onSubmit()
-  {
-    console.log('onsbumit');
-    
-    this._tiketService.save(this.tiket).subscribe
+  {    
+    this.tiketAssignation.idTiket = this.tiket._id;
+    this._tiketService.assingAssistant(this.tiketAssignation).subscribe
     (response=>
       {
-          this._route.navigate([".."]);
+        if(response.status && response.status == 'ok')
+            this._route.navigate([".."]);
+        else
+          alert(response.message);
       },error=>
       {
         alert(error);
@@ -82,6 +87,19 @@ export class AssignTiketAssistantComponent implements OnInit{
       return a.id === b.id;
     else
         return false;
+ }
+
+ assistantChange()
+ {
+  console.log(this.tiketAssignation);
+   if(this.tiketAssignation.idAssistant  &&
+     this.tiketAssignation.idAssistant != undefined)
+     {
+        let a = this.assistants.find(x=>x._id == this.tiketAssignation.idAssistant);
+
+        this.tiketAssignation.greeting = 'Hola! ' + this.tiket.customeName + ', ' +
+        a?.name + ' te escribe';
+     }
  }
 
 }

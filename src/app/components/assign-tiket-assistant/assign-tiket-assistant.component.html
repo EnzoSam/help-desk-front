@@ -10,9 +10,10 @@
     #selAssistant
       name="assistant"
       [compareWith]="compareFn"
-      [(ngModel)]="tiket.assistant"
+      [(ngModel)]="tiketAssignation.idAssistant"
+      (selectionChange)="assistantChange()"
     >
-      <mat-option *ngFor="let a of assistants" [value]="a">{{
+      <mat-option *ngFor="let a of assistants" [value]="a._id">{{
         a.name
       }}</mat-option>
     </mat-select>
@@ -27,13 +28,15 @@
     ></textarea>
   </mat-form-field>
 
-  <mat-slide-toggle color="primary"  [checked]="true" matInput name="sendHi">
+  <mat-slide-toggle color="primary"  [checked]="tiketAssignation.sendGreeting" matInput name="sendHi">
     Enviar saludo
   </mat-slide-toggle>
 
   <mat-form-field appearance="fill">
-    <mat-label for="hi">Incidencia</mat-label>
-    <textarea name="hi" matInput>Hola! {{tiket.customeName}} mi nombre es {{ (selAssistant.value? selAssistant.value.name:'')}}
+    <mat-label for="hi">Saludo</mat-label>
+    <textarea name="hi" 
+    [(ngModel)]="tiketAssignation.greeting"
+    matInput>{{tiketAssignation.greeting}}
     </textarea>
   </mat-form-field>
 

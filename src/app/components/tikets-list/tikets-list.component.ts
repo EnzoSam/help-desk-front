@@ -34,7 +34,6 @@ export class TiketsListComponent implements OnInit{
     (1).subscribe(response=>
       {
         this.tikets = response;
-        console.log(this.tikets);
       },
       error=>
       {
