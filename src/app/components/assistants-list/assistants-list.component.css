@@ -3,3 +3,9 @@ table {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+#btnNuevo
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

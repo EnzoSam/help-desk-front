@@ -1,56 +1,46 @@
 <div class="demo-button-container">
-  <button id="btnNuevo" mat-raised-button [routerLink]="['../' +routes.tiket_detail,'']" class="demo-button">
-    Nuevo
+  <button
+    id="btnNuevo"
+    mat-raised-button
+    color="primary"
+    [routerLink]="['../' + routes.tiket_detail, '']"
+    class="demo-button"
+  >
+    Nuevo Tiket
   </button>
 </div>
-<table mat-table [dataSource]="tikets" class="mat-elevation-z8">
 
-    <ng-container matColumnDef="customeName">
-      <th mat-header-cell *matHeaderCellDef> Cliente </th>
-      <td mat-cell *matCellDef="let element"> 
-        {{(element.customeName && element.customeName != ''?
-        element.customeName:element.customeWhatsappId)}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="createdAt">
-      <th mat-header-cell *matHeaderCellDef> Fecha </th>
-      <td mat-cell *matCellDef="let element"> {{element.createdAt | date}} </td>
-    </ng-container>    
-
-    <ng-container matColumnDef="assistant">
-      <th mat-header-cell *matHeaderCellDef> Tecnico </th>
-      <td mat-cell *matCellDef="let element"> 
-        <ng-container *ngIf="element.assistant">
-          {{element.assistant.name}} 
-        </ng-container>
-        <ng-container *ngIf="!element.assistant">
-          <a mat-button [routerLink]="['../' + routes.assign_tiket_assistant,element._id]">
-            Asociar Tecnico
-          </a>
-        </ng-container>        
-      </td>
-    </ng-container>    
-
-    <ng-container matColumnDef="state">
-      <th mat-header-cell *matHeaderCellDef> Estado </th>
-      <td mat-cell *matCellDef="let element"> {{(element.state === 1?'Pendiente':'Cerrado')}} </td>
-    </ng-container>        
-
-    <ng-container matColumnDef="edit" stickyEnd>
-      <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
-      <td mat-cell *matCellDef="let element">
-        <mat-icon>edit</mat-icon>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="delete" stickyEnd>
-      <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
-      <td mat-cell *matCellDef="let element">
-        <mat-icon>delete</mat-icon>
-      </td>
-    </ng-container>      
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row [routerLink]="['../' +routes.tiket_detail, row._id]"
-    *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<mat-card class="card-tiket" *ngFor="let t of tikets" [routerLink]="['../' +routes.tiket_detail, t._id]">
+  <div class="card-tiket-content">
+    <div class="card-info">
+      <mat-card-header>
+        <mat-card-title>{{
+          t.customeName && t.customeName != ""
+            ? t.customeName
+            : t.customeWhatsappId
+        }}</mat-card-title>
+        <mat-card-subtitle>{{ t.customeWhatsappId }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ t.problemDescription }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="accent">Cerrar</button>
+      </mat-card-actions>
+    </div>
+    <div>
+      <ng-container *ngIf="t.assistant">
+        <mat-chip color="primary">
+          <mat-icon matChipAvatar>person</mat-icon>
+          {{t.assistant.name}}
+        </mat-chip>
+      </ng-container>
+      <ng-container *ngIf="!t.assistant">
+        <mat-chip color="warn" [routerLink]="['../' + routes.assign_tiket_assistant,t._id]">
+          <mat-icon matChipAvatar>person</mat-icon>
+          Asignar Tecnico
+        </mat-chip>
+      </ng-container>
+    </div>
+  </div>
+</mat-card>

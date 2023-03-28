@@ -2,8 +2,30 @@
     cursor: pointer;
   }
 
+
 #btnNuevo
 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
+}
+
+.card-tiket {
+  width: auto;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.card-tiket-content
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-info
+{
+  flex-grow: 1;
+}
+
+mat-chip
+{
+  margin: 5px;
 }
