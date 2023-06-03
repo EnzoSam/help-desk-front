@@ -13,7 +13,12 @@
           <input #nombre="ngModel" name="name" [(ngModel)]= "assistant.name" required matInput placeholder="Nombre">
         </mat-form-field>
       </p>
-              
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo</mat-label>
+          <input #tipo="ngModel" name="type" [(ngModel)]= "assistant.type" required matInput placeholder="Tipo">
+        </mat-form-field>
+      </p>              
     </mat-card-content> 
     <mat-card-actions>
       <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Guardar</button>

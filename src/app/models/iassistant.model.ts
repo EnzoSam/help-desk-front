@@ -3,5 +3,6 @@ export interface IAssistant {
     name: String;
     nickNames: string[];
     whatsappId:String;
+    type:string;
     state:Number;
 }

@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { TiketDetailComponent } from './components/tiket-detail/tiket-detail.component';
 import { TiketsListComponent } from './components/tikets-list/tikets-list.component';
 import { routesParams, routesPaths } from './constants/app-routes.constants';
+import { BusinessListComponent } from './components/business-list/business-list.component';
+import { BusinessDetailComponent } from './components/business-detail/business-detail.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,14 @@ const routes: Routes = [
     path:routesPaths.assistants + '/' + routesPaths.assistants_detail + '/:' + routesParams.detail_id,
     component:AssistantsDetailComponent        
   },  
+  {
+    path:routesPaths.business,
+    component:BusinessListComponent,
+  },
+  {        
+    path:routesPaths.business + '/' + routesPaths.business_detail + '/:' +
+     routesParams.detail_id, component:BusinessDetailComponent        
+  },    
   { path: '**', component: ErrorComponent }  
 ];
 

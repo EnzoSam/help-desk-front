@@ -8,7 +8,9 @@ export const routesPaths = {
     tiket_detail:"tikets-detail",
     assign_tiket_assistant:'tiket-assistant',
     assistants:"assistants",
-    assistants_detail:"assistant-detail"
+    assistants_detail:"assistant-detail",
+    business:"business",
+    business_detail:"business-detail"
   
   };
 

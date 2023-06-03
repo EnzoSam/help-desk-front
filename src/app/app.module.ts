@@ -20,6 +20,9 @@ import { ErrorComponent } from './components/error/error.component';
 import { TiketService } from './services/tiket.service';
 import { TiketDetailComponent } from './components/tiket-detail/tiket-detail.component';
 import { AssignTiketAssistantComponent } from './components/assign-tiket-assistant/assign-tiket-assistant.component';
+import { BusinessService } from './services/business.service';
+import { BusinessListComponent } from './components/business-list/business-list.component';
+import { BusinessDetailComponent } from './components/business-detail/business-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { AssignTiketAssistantComponent } from './components/assign-tiket-assista
     TiketsListComponent,
     ErrorComponent,
     TiketDetailComponent,
-    AssignTiketAssistantComponent
+    AssignTiketAssistantComponent,
+    BusinessListComponent,
+    BusinessDetailComponent
   ],
   imports: [
     HttpClientModule,
@@ -47,6 +52,7 @@ import { AssignTiketAssistantComponent } from './components/assign-tiket-assista
     AppService,
     AssistantService,
     TiketService,
+    BusinessService,
     {
       provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
     }

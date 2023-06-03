@@ -23,6 +23,7 @@ export class AssistantService extends BaseService{
         name: '',
         nickNames:[],
         whatsappId:'',
+        type:'Humano',
         state:1
       }
 
