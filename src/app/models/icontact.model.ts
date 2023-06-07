@@ -5,6 +5,6 @@ export interface IContact {
     name: String;
     reference: String;
     type: String;
-    business:IBusiness
+    business?:IBusiness
     state:Number;
 }

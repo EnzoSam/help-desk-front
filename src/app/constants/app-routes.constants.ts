@@ -10,8 +10,9 @@ export const routesPaths = {
     assistants:"assistants",
     assistants_detail:"assistant-detail",
     business:"business",
-    business_detail:"business-detail"
-  
+    business_detail:"business-detail",
+    contacts:"contacts",
+    contacts_detail:"contacts-detail"      
   };
 
   export const routesParams = {    

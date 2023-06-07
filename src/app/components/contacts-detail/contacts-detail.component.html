@@ -1,0 +1,81 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Contacto</mat-card-title>
+        <mat-card-subtitle>Ingrese los datos del Contacto</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input
+              #nombre="ngModel"
+              name="name"
+              [(ngModel)]="contact.name"
+              required
+              matInput
+              placeholder="Nombre"
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Referencia</mat-label>
+            <input
+              #referencia="ngModel"
+              name="reference"
+              [(ngModel)]="contact.reference"
+              required
+              matInput
+              placeholder="Reference"
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Tipo</mat-label>
+            <input
+              #tipo="ngModel"
+              name="type"
+              [(ngModel)]="contact.type"
+              required
+              matInput
+              placeholder="Tipo"
+            />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label for="business">Empresa</mat-label>
+            <mat-select
+              name="business"
+              [compareWith]="compareFn"
+              [(ngModel)]="contact.business"
+            >
+              <mat-option *ngFor="let b of bussinesAll" [value]="b">{{
+                b.name
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label for="state">Estado</mat-label>
+            <input matInput name="state" [(ngModel)]="contact.state" />
+          </mat-form-field>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="loginForm.invalid"
+        >
+          Guardar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</form>

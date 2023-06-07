@@ -10,6 +10,8 @@ import { TiketsListComponent } from './components/tikets-list/tikets-list.compon
 import { routesParams, routesPaths } from './constants/app-routes.constants';
 import { BusinessListComponent } from './components/business-list/business-list.component';
 import { BusinessDetailComponent } from './components/business-detail/business-detail.component';
+import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
+import { ContactsDetailComponent } from './components/contacts-detail/contacts-detail.component';
 
 const routes: Routes = [
   {
@@ -48,7 +50,15 @@ const routes: Routes = [
   {        
     path:routesPaths.business + '/' + routesPaths.business_detail + '/:' +
      routesParams.detail_id, component:BusinessDetailComponent        
-  },    
+  },  
+  {
+    path:routesPaths.contacts,
+    component:ContactsListComponent,
+  },
+  {        
+    path:routesPaths.contacts + '/' + routesPaths.contacts_detail + '/:' +
+     routesParams.detail_id, component:ContactsDetailComponent        
+  },     
   { path: '**', component: ErrorComponent }  
 ];
 
