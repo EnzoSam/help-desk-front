@@ -4,8 +4,8 @@ export interface IMessage {
     _id: any | undefined;
     text: String;
     date:Date;
-    from:IContact;
-    to:IContact;
+    from?:IContact;
+    to?:IContact;
     role:String;
     type:String;
     referenceId:String;

@@ -1,7 +1,7 @@
 <form #form="ngForm" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill">
     <mat-label for="customeName">Cliente</mat-label>
-    <input matInput name="customeName" [(ngModel)]="tiket.customeName" />
+    <input matInput name="customeName" [(ngModel)]="tiket.getCustomerView" />
   </mat-form-field>
 
   <mat-form-field appearance="fill">

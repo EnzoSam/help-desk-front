@@ -1,0 +1,9 @@
+<form>
+    <mat-form-field>
+      <mat-label>Mensaje</mat-label>
+      <input type="text" matInput
+      #text="ngModel" name="text" [(ngModel)]= "message.text"
+       placeholder="">
+      <mat-icon matSuffix (click)="sendMessage()">send</mat-icon>
+    </mat-form-field>
+</form>

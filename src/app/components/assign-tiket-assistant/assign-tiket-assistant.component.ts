@@ -98,7 +98,7 @@ export class AssignTiketAssistantComponent implements OnInit{
         let a = this.assistants.find(x=>x._id == this.tiketAssignation.idAssistant);
 
         this.tiketAssignation.greeting = 
-        'Hola ' + this.tiket.customeName + '! ' + a?.name + ' te escribe. ' +
+        'Hola ' + this.tiket.getCustomerView() + '! ' + a?.name + ' te escribe. ' +
         '\n Su codigo de tiket es: ' + this.tiket._id + ". \n";
      }
  }

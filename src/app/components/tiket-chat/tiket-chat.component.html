@@ -1,0 +1,44 @@
+<div class="tiket-chat">
+<mat-card class="card-tiket" *ngIf="tiket">
+    <div>
+      <div>
+        <mat-card-header>
+          <mat-card-title>{{
+            tiket.contact?.name
+          }}</mat-card-title>
+          <mat-card-subtitle>{{ tiket.contact?.reference }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ tiket.problemDescription }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button color="accent">Cerrar</button>
+        </mat-card-actions>
+      </div>
+      <div>
+        <ng-container *ngIf="tiket.assistant">
+          <mat-chip color="primary">
+            <mat-icon matChipAvatar>person</mat-icon>
+            {{tiket.assistant.name}}
+          </mat-chip>
+        </ng-container>
+        <ng-container *ngIf="!tiket.assistant">
+          <mat-chip color="warn" [routerLink]="['../' + routes.assign_tiket_assistant,tiket._id]">
+            <mat-icon matChipAvatar>person</mat-icon>
+            Asignar Tecnico
+          </mat-chip>
+        </ng-container>
+      </div>
+    </div>
+  </mat-card>
+
+  <div *ngIf="tiket && tiket.contact">
+    <app-chat [contact]="tiket.contact"></app-chat>
+  </div>
+  
+  <div class="send-message">
+    <app-send-message [contact]="tiket?.contact">
+
+    </app-send-message>
+  </div>
+</div>

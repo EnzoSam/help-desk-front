@@ -26,6 +26,11 @@ import { BusinessDetailComponent } from './components/business-detail/business-d
 import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './components/contacts-detail/contacts-detail.component';
 import { ContactService } from './services/contact.service';
+import { ChatComponent } from './components/chat/chat.component';
+import { ChatMessageComponent } from './components/chat-message/chat-message.component';
+import { MessageService } from './services/message.service';
+import { TiketChatComponent } from './components/tiket-chat/tiket-chat.component';
+import { SendMessageComponent } from './components/send-message/send-message.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,11 @@ import { ContactService } from './services/contact.service';
     BusinessListComponent,
     BusinessDetailComponent,
     ContactsListComponent,
-    ContactsDetailComponent
+    ContactsDetailComponent,
+    ChatComponent,
+    ChatMessageComponent,
+    TiketChatComponent,
+    SendMessageComponent
   ],
   imports: [
     HttpClientModule,
@@ -59,6 +68,7 @@ import { ContactService } from './services/contact.service';
     TiketService,
     BusinessService,
     ContactService,
+    MessageService,
     {
       provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
     }

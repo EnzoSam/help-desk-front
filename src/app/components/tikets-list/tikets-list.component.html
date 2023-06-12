@@ -10,16 +10,14 @@
   </button>
 </div>
 
-<mat-card class="card-tiket" *ngFor="let t of tikets" [routerLink]="['../' +routes.tiket_detail, t._id]">
+<mat-card class="card-tiket" *ngFor="let t of tikets" [routerLink]="['../' +routes.tiket_chat, t._id]">
   <div class="card-tiket-content">
     <div class="card-info">
       <mat-card-header>
         <mat-card-title>{{
-          t.customeName && t.customeName != ""
-            ? t.customeName
-            : t.customeWhatsappId
+          t.contact?.name
         }}</mat-card-title>
-        <mat-card-subtitle>{{ t.customeWhatsappId }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ t.contact?.reference }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p>{{ t.problemDescription }}</p>

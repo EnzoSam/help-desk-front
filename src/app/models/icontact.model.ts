@@ -2,9 +2,9 @@ import { IBusiness } from "./ibusiness.model";
 
 export interface IContact {
     _id: any | undefined;
-    name: String;
-    reference: String;
-    type: String;
+    name: string;
+    reference: string;
+    type: string;
     business?:IBusiness
     state:Number;
 }

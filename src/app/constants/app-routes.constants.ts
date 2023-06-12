@@ -12,9 +12,11 @@ export const routesPaths = {
     business:"business",
     business_detail:"business-detail",
     contacts:"contacts",
-    contacts_detail:"contacts-detail"      
+    contacts_detail:"contacts-detail",
+    tiket_chat:"tiket-chat"   
   };
 
   export const routesParams = {    
-    detail_id:"id"
+    detail_id:"id",
+    contact_id:"contactId"
   };  

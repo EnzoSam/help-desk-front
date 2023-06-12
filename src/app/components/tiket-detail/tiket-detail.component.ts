@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { routesParams } from 'src/app/constants/app-routes.constants';
 import { IAssistant } from 'src/app/models/iassistant.model';
+import { IContact } from 'src/app/models/icontact.model';
 import { Tiket } from 'src/app/models/tiket.model';
 import { AssistantService } from 'src/app/services/assitant.service';
+import { ContactService } from 'src/app/services/contact.service';
 import { TiketService } from 'src/app/services/tiket.service';
 
 @Component({
@@ -15,19 +17,22 @@ export class TiketDetailComponent implements OnInit{
 
   tiket:Tiket;
   assistants:IAssistant[];
+  contacts:IContact[];
 
   constructor(private _tiketService:TiketService,
     private _assistantsService:AssistantService,
+    private _contactService:ContactService,
     private _activateRoute:ActivatedRoute,
     private _route:Router)
   {
     this.assistants = [];
+    this.contacts = [];
     this.tiket = this._tiketService.newTiket();
   }
   ngOnInit(): void {
     
     this.loadAssistants();
-
+    this.loadContacts();
     if(this._activateRoute.snapshot.paramMap.has(routesParams.detail_id))
     {
       let id = this._activateRoute.snapshot.paramMap.get(routesParams.detail_id);
@@ -55,6 +60,18 @@ export class TiketDetailComponent implements OnInit{
     this._assistantsService.getAssistants().subscribe(response =>
       {
         this.assistants = response;
+      },
+      error=>
+      {
+        alert(error);
+      })
+  }
+
+  loadContacts()
+  {
+    this._contactService.getAll().subscribe(response =>
+      {
+        this.contacts = response;
       },
       error=>
       {

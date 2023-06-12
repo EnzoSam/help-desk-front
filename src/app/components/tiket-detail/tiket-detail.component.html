@@ -1,8 +1,11 @@
 <form #form="ngForm"  (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill">
-        <mat-label for="customeName">Cliente</mat-label>
-        <input matInput name="customeName" [(ngModel)]="tiket.customeName" >
-      </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label for="contact">Contacto</mat-label>
+    <mat-select name="contact"
+    [compareWith]="compareFn" [(ngModel)]="tiket.contact">
+      <mat-option *ngFor="let c of contacts" [value]="c">{{c.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label for="assistant">Tecnico</mat-label>
         <mat-select name="assistant"

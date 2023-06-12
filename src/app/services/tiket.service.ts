@@ -22,8 +22,6 @@ export class TiketService extends BaseService{
     let tiket = new Tiket(
         undefined,
         '',
-        '',
-        '',
         1,
         undefined,        
         undefined,

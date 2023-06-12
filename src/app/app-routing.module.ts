@@ -12,6 +12,7 @@ import { BusinessListComponent } from './components/business-list/business-list.
 import { BusinessDetailComponent } from './components/business-detail/business-detail.component';
 import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './components/contacts-detail/contacts-detail.component';
+import { TiketChatComponent } from './components/tiket-chat/tiket-chat.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
   {        
     path:routesPaths.contacts + '/' + routesPaths.contacts_detail + '/:' +
      routesParams.detail_id, component:ContactsDetailComponent        
+  },   
+  {        
+    path:routesPaths.tiket_chat + '/:' +
+     routesParams.detail_id, component:TiketChatComponent        
   },     
   { path: '**', component: ErrorComponent }  
 ];
