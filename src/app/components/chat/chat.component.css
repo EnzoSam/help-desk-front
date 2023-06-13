@@ -1,0 +1,18 @@
+.chat-list
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.send-message
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+app-chat-message
+{
+    display: flex;
+    width: 100%;
+}

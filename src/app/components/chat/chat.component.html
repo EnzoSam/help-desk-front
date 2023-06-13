@@ -1,3 +1,8 @@
-<div>
+<div class="chat-list">
     <app-chat-message *ngFor="let m of messages" [message]="m">  </app-chat-message>
+    <div class="send-message">
+        <app-send-message [contact]="contact">
+    
+        </app-send-message>
+      </div>
 </div>
