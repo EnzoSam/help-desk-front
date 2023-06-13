@@ -45,9 +45,12 @@ export class TiketService extends BaseService{
     }
   }
 
-  getTikets(state:number):Observable<Tiket[]>
+  getTikets(state?:number):Observable<Tiket[]>
   {
-    return this._http.get<Tiket[]>(environment.baseApiUrl + 'tiket/' + state);
+    if(state)
+      return this._http.get<Tiket[]>(environment.baseApiUrl + 'tiket/' + state);
+    else
+      return this._http.get<Tiket[]>(environment.baseApiUrl + 'tiket');
   }
 
   save(tiket:Tiket):Observable<Tiket>

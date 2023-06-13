@@ -31,6 +31,7 @@ import { ChatMessageComponent } from './components/chat-message/chat-message.com
 import { MessageService } from './services/message.service';
 import { TiketChatComponent } from './components/tiket-chat/tiket-chat.component';
 import { SendMessageComponent } from './components/send-message/send-message.component';
+import { ReportsResumeComponent } from './components/reports-resume/reports-resume.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SendMessageComponent } from './components/send-message/send-message.com
     ChatComponent,
     ChatMessageComponent,
     TiketChatComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    ReportsResumeComponent
   ],
   imports: [
     HttpClientModule,

@@ -13,6 +13,7 @@ import { BusinessDetailComponent } from './components/business-detail/business-d
 import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './components/contacts-detail/contacts-detail.component';
 import { TiketChatComponent } from './components/tiket-chat/tiket-chat.component';
+import { ReportsResumeComponent } from './components/reports-resume/reports-resume.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,9 @@ const routes: Routes = [
   {        
     path:routesPaths.tiket_chat + '/:' +
      routesParams.detail_id, component:TiketChatComponent        
+  }, 
+  {        
+    path:routesPaths.reports_resume, component: ReportsResumeComponent        
   },     
   { path: '**', component: ErrorComponent }  
 ];

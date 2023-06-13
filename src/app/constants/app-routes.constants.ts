@@ -13,7 +13,8 @@ export const routesPaths = {
     business_detail:"business-detail",
     contacts:"contacts",
     contacts_detail:"contacts-detail",
-    tiket_chat:"tiket-chat"   
+    tiket_chat:"tiket-chat",
+    reports_resume:'reports-resume'
   };
 
   export const routesParams = {    
