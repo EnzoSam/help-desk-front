@@ -1,7 +1,7 @@
 .tiket-chat-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .card-tiket
@@ -13,11 +13,26 @@
 app-chat
 {
     display: flex;
-    width: 100%;
+    flex-grow: 1;
 }
 
 .chat-container{
     display: flex;
-    width: 100%;
+    flex-grow: 1;
     margin-top: 10px;
+}
+
+mat-chip
+{
+    margin-left: 10px;
+}
+
+.edit-description
+{
+    transform: scale(0.7);
+}
+
+mat-icon
+{
+    cursor: pointer;
 }

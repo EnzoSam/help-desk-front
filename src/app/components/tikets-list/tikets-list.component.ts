@@ -37,7 +37,7 @@ export class TiketsListComponent implements OnInit{
       },
       error=>
       {
-        alert(error);
+        alert(JSON.stringify(error));
       })
   }
 }

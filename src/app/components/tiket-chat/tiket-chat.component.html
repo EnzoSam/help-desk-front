@@ -7,7 +7,14 @@
           <mat-card-subtitle>{{ tiket.contact?.reference }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <p>{{ tiket.problemDescription }}</p>
+          <p>
+            {{ tiket.problemDescription }}
+            <mat-icon class="edit-description"
+            [routerLink]="['../../' +routes.tiket_detail, tiket._id]">edit</mat-icon>
+          </p>
+          <p>Abierto: {{tiket.createdAt| date:'short'}}</p>
+          <p>Cerrado: {{tiket.closedAt| date:'short'}}</p>
+          <p>Duracion: {{duration.hours + ' horas ' + duration.minutes + ' minutos'}}</p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-stroked-button color="accent">Cerrar</button>

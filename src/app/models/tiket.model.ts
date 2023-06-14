@@ -10,6 +10,7 @@ export class Tiket {
     public assistant?:IAssistant,
     public contact?:IContact,
     public createdAt?:Date,
+    public closedAt?:Date,
     public updatedAt?:Date)
     {
 
