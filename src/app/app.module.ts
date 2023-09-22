@@ -32,6 +32,7 @@ import { MessageService } from './services/message.service';
 import { TiketChatComponent } from './components/tiket-chat/tiket-chat.component';
 import { SendMessageComponent } from './components/send-message/send-message.component';
 import { ReportsResumeComponent } from './components/reports-resume/reports-resume.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,13 @@ import { ReportsResumeComponent } from './components/reports-resume/reports-resu
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     TokenService,
