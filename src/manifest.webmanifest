@@ -1,7 +1,7 @@
 {
-  "name": "help-desk-front",
-  "short_name": "help-desk-front",
-  "theme_color": "#1976d2",
+  "name": "Ally",
+  "short_name": "Ally",
+  "theme_color": "#C2185B",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
